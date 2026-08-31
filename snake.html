@@ -1,0 +1,1524 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>For Our Nona 🤍</title>
+
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f3dce3,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #ead9c9,
+            transparent 40%
+        ),
+
+        #f8f0ec;
+
+    color: #514248;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.opening {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+}
+
+
+.opening-card {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 60px 30px;
+
+    background:
+        rgba(255,255,255,0.80);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(80,50,60,0.15);
+
+    animation:
+        fadeIn 1.8s ease;
+
+}
+
+
+.flower {
+
+    font-size: 55px;
+
+    animation:
+        float 3s ease-in-out infinite;
+
+}
+
+
+.opening h1 {
+
+    font-size: 52px;
+
+    font-weight: normal;
+
+    margin: 15px 0;
+
+}
+
+
+.opening p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+.open-button {
+
+    margin-top: 25px;
+
+    padding: 16px 32px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #a96f83;
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.open-button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.main {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 65px 20px 80px;
+
+}
+
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.header h1 {
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.header p {
+
+    font-size: 17px;
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================
+   MAIN PHOTO
+========================= */
+
+.photo-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(70,40,50,0.16);
+
+}
+
+
+.photo-container img {
+
+    width: 100%;
+
+    height: 480px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    transition:
+        opacity 0.8s ease;
+
+}
+
+
+.photo-caption {
+
+    text-align: center;
+
+    margin: 15px 0 5px;
+
+    font-style: italic;
+
+    color: #806772;
+
+}
+
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+
+    margin: 65px auto;
+
+    max-width: 720px;
+
+    background:
+        rgba(255,255,255,0.76);
+
+    padding: 45px 40px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(70,40,50,0.08);
+
+    line-height: 1.9;
+
+    font-size: 18px;
+
+}
+
+
+.letter-title {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    margin-bottom: 35px;
+
+}
+
+
+.letter p {
+
+    margin-bottom: 28px;
+
+}
+
+
+.deep {
+
+    text-align: center;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    color: #8f596d;
+
+    margin: 40px 0;
+
+}
+
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.memories-title {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    margin-top: 70px;
+
+}
+
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+}
+
+
+.gallery img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 18px
+        rgba(70,40,50,0.12);
+
+}
+
+
+.gallery img:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+
+    text-align: center;
+
+    margin-top: 100px;
+
+    padding: 70px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2dce3,
+            #f5e8dc
+        );
+
+    border-radius: 35px;
+
+}
+
+
+.big-heart {
+
+    font-size: 48px;
+
+}
+
+
+.ending h2 {
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+}
+
+
+.ending p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+.final-line {
+
+    margin-top: 35px;
+
+    font-size: 25px !important;
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #a96f83;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow:
+        0 8px 25px
+        rgba(70,40,50,0.25);
+
+    z-index: 20;
+
+}
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+
+/* =========================
+   ANDROID / PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+
+    .opening {
+
+        padding: 18px;
+
+    }
+
+
+    .opening-card {
+
+        padding:
+            50px 22px;
+
+    }
+
+
+    .opening h1 {
+
+        font-size: 37px;
+
+    }
+
+
+    .opening p {
+
+        font-size: 16px;
+
+    }
+
+
+    .main {
+
+        padding:
+            45px 15px 60px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    .header p {
+
+        font-size: 15px;
+
+    }
+
+
+    .photo-container img {
+
+        height: 350px;
+
+    }
+
+
+    .letter {
+
+        padding:
+            30px 22px;
+
+        font-size: 16px;
+
+        line-height: 1.85;
+
+    }
+
+
+    .deep {
+
+        font-size: 22px;
+
+    }
+
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+
+    }
+
+
+    .gallery img {
+
+        height: 145px;
+
+    }
+
+
+    .ending {
+
+        padding:
+            55px 20px;
+
+    }
+
+
+    .ending h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .final-line {
+
+        font-size:
+            21px !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- =========================
+     OPENING SCREEN
+========================= -->
+
+<section
+class="opening"
+id="opening">
+
+
+    <div class="opening-card">
+
+
+        <div class="flower">
+            🌷
+        </div>
+
+
+        <h1>
+            Happy Birthday, Nona
+        </h1>
+
+
+        <p>
+            There are some things<br>
+            that words can never fully explain...
+        </p>
+
+
+        <p>
+            But today,<br>
+            we want to try.
+        </p>
+
+
+        <button
+        class="open-button"
+        onclick="openBirthday()">
+
+            Open Your Card 💌
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     MAIN PAGE
+========================= -->
+
+<main
+class="main"
+id="main">
+
+
+    <header
+    class="header">
+
+
+        <div class="flower">
+            🌸
+        </div>
+
+
+        <h1>
+            Para sa aming Nona
+        </h1>
+
+
+        <p>
+            Isang munting liham
+            mula sa mga pusong pinalaki mo.
+        </p>
+
+
+    </header>
+
+
+
+    <!-- MAIN PHOTO -->
+
+    <div
+    class="photo-container">
+
+
+        <img
+        id="mainPhoto"
+        src="firstpic.jpg">
+
+
+        <p
+        class="photo-caption">
+
+            Mga alaala na habang buhay naming dadalhin. 🤍
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         LETTER
+    ========================= -->
+
+    <section
+    class="letter">
+
+
+        <h2
+        class="letter-title">
+
+            Nona...
+
+        </h2>
+
+
+        <p>
+            Kung kaya lang naming ibalik ang panahon,
+            gusto naming ipakita sa iyo
+            kung gaano kalaki ang naging bahagi mo
+            sa bawat isa sa amin.
+        </p>
+
+
+        <p>
+            Noong maliliit pa kami,
+            ikaw na ang isa sa mga taong
+            palaging nandiyan.
+        </p>
+
+
+        <p>
+            Kapag may sakit kami,
+            ikaw ang unang nag-aalala.
+        </p>
+
+
+        <p>
+            Kapag may kailangan kami,
+            kahit hindi madali,
+            gumagawa ka ng paraan.
+        </p>
+
+
+        <p>
+            Minsan,
+            wala mang sapat,
+            hinahanapan mo pa rin kami
+            ng paraan.
+        </p>
+
+
+        <p class="deep">
+            Dahil ganoon ka magmahal.
+        </p>
+
+
+        <p>
+            Hindi mo hinihintay na may matira
+            para sa sarili mo
+            bago mo kami isipin.
+        </p>
+
+
+        <p class="deep">
+            Kami muna.
+            <br>
+            Palagi.
+        </p>
+
+
+        <p>
+            At habang kami ay lumalaki,
+            marami pala kaming hindi napansin.
+        </p>
+
+
+        <p>
+            Ang mga pagod na itinago mo.
+            <br>
+            Ang mga problemang hindi mo ipinakita.
+            <br>
+            Ang mga pagkakataong kailangan mo rin sana
+            ng yakap...
+            pero ikaw pa rin ang yumakap sa amin.
+        </p>
+
+
+        <p>
+            Nona,
+            hindi lamang mga apo ang minahal mo.
+        </p>
+
+
+        <p>
+            Minahal mo ang iyong mga anak.
+            <br>
+            Minahal mo ang bawat isa sa amin.
+        </p>
+
+
+        <p>
+            At kahit may mga panahong may tampuhan,
+            may mga salitang hindi nasasabi,
+            ang pagmamahal mo
+            ay hindi kailanman nawala.
+        </p>
+
+
+        <p class="deep">
+            Ganoon kalawak ang puso mo.
+        </p>
+
+
+        <p>
+            At may mga batang dumating
+            sa buhay mo
+            na hindi mo naman kailangang akuin,
+            pero minahal mo pa rin.
+        </p>
+
+
+        <p>
+            Isa na roon si Noah.
+        </p>
+
+
+        <p>
+            Habang lumalaki kami,
+            nakita namin kung paano mo siya
+            tinanggap at inalagaan.
+        </p>
+
+
+        <p>
+            Hindi dahil kailangan mo.
+        </p>
+
+
+        <p class="deep">
+            Kundi dahil mahal mo siya.
+        </p>
+
+
+        <p>
+            At marahil iyon ang isa sa pinakamagandang
+            bagay na itinuro mo sa amin:
+        </p>
+
+
+        <p>
+            Na ang pamilya
+            ay hindi lamang tungkol sa dugo.
+        </p>
+
+
+        <p>
+            Ito ay tungkol sa taong
+            pinipiling manatili.
+        </p>
+
+
+        <p>
+            Pinipiling magmahal.
+            <br>
+            Pinipiling mag-alaga.
+        </p>
+
+
+        <p>
+            At ikaw, Nona,
+            ilang beses mong piniling gawin iyon
+            para sa amin.
+        </p>
+
+
+        <p class="deep">
+            Kaya sana...
+            kahit minsan,
+            maramdaman mo rin
+            kung gaano ka namin kamahal.
+        </p>
+
+
+        <p>
+            Hindi namin nakakalimutan
+            ang pagmamahal mo.
+        </p>
+
+
+        <p>
+            Nasa mga alaala namin ito.
+            <br>
+            Nasa pagkabata namin.
+            <br>
+            Nasa bawat kwento ng pamilya.
+        </p>
+
+
+        <p>
+            Nasa bawat pagkakataong sinabi namin:
+        </p>
+
+
+        <p class="deep">
+            "Buti na lang nandiyan si Nona."
+        </p>
+
+
+        <p>
+            At ngayong kaarawan mo,
+            sana naman...
+        </p>
+
+
+        <p>
+            Kahit sandali,
+            ikaw naman ang alagaan namin.
+        </p>
+
+
+        <p>
+            Ikaw naman ang isipin.
+            <br>
+            Ikaw naman ang yakapin.
+        </p>
+
+
+        <p>
+            Dahil napakaraming taon mong
+            naging yakap para sa amin.
+        </p>
+
+
+        <p class="deep">
+            Nona...
+        </p>
+
+
+        <p>
+            Kung sakaling dumating ang araw
+            na makalimutan mo kung gaano ka kahalaga,
+            balikan mo lamang kami.
+        </p>
+
+
+        <p>
+            Tingnan mo ang mga batang
+            minsan mong inalagaan.
+        </p>
+
+
+        <p>
+            Tingnan mo kung gaano na kami kalaki.
+        </p>
+
+
+        <p>
+            At tandaan mo—
+        </p>
+
+
+        <p class="deep">
+            May bahagi ng kung sino kami ngayon
+            na nagsimula sa pagmamahal mo.
+        </p>
+
+
+        <p>
+            Hindi namin kayang tumbasan
+            ang lahat ng ginawa mo.
+        </p>
+
+
+        <p>
+            Pero kaya naming sabihin:
+        </p>
+
+
+        <p class="deep">
+            Salamat.
+        </p>
+
+
+        <p>
+            Salamat sa bawat sakripisyo.
+            <br>
+            Salamat sa bawat pag-aalala.
+            <br>
+            Salamat sa bawat pagkakataong
+            pinili mong maging matatag para sa amin.
+        </p>
+
+
+        <p>
+            At higit sa lahat...
+        </p>
+
+
+        <p class="deep">
+            Salamat dahil minahal mo kami
+            na parang wala kaming ibang kailangan
+            kundi ang pagmamahal mo.
+        </p>
+
+
+        <p>
+            Nona,
+            sa araw na ito,
+            hindi lang namin ipinagdiriwang
+            ang iyong kaarawan.
+        </p>
+
+
+        <p>
+            Ipinagdiriwang namin
+            ang babaeng naging tahanan
+            ng napakaraming puso.
+        </p>
+
+
+        <p>
+            Ang babaeng,
+            kahit napagod,
+            nagpatuloy.
+        </p>
+
+
+        <p>
+            Kahit nasaktan,
+            nagmahal.
+        </p>
+
+
+        <p>
+            Kahit kapos,
+            nagbigay.
+        </p>
+
+
+        <p>
+            At kahit marami nang nagbago,
+            nanatili.
+        </p>
+
+
+        <p class="deep">
+            Kaya ngayon,
+            hayaan mong kami naman
+            ang magsabi sa iyo:
+        </p>
+
+
+        <p class="deep">
+            Hindi ka nag-iisa.
+        </p>
+
+
+        <p>
+            Nandito kami.
+        </p>
+
+
+        <p>
+            At kung ang buong buhay mo
+            ay ginugol sa pag-aalaga sa amin,
+            ngayon,
+            hayaan mong ang pagmamahal namin
+            ang yumakap sa iyo.
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <h2
+    class="memories-title">
+
+        Mga Alaala Natin 🤍
+
+    </h2>
+
+
+    <div
+    class="gallery">
+
+
+        <img src="firstpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="secondpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="thirdpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="fourthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="fifthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="sixthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="seventhpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="eighthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="ninthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="tenthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="eleventhpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="twelfthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+        <img src="thirteenthpic.jpg"
+        onclick="changePhoto(this)">
+
+
+    </div>
+
+
+
+    <!-- =========================
+         FINAL MESSAGE
+    ========================= -->
+
+    <section
+    class="ending">
+
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+
+        <h2>
+            Happy Birthday, Nona.
+        </h2>
+
+
+        <p>
+            Salamat sa pagiging tahanan namin.
+        </p>
+
+
+        <p>
+            Salamat sa pagmamahal
+            na hindi nauubos.
+        </p>
+
+
+        <p
+        class="final-line">
+
+            At kahit gaano pa kami kalaki...
+
+            <br><br>
+
+            mananatili kaming mga batang
+            unang natutong mahalin
+            sa piling mo.
+
+        </p>
+
+
+        <p style="font-size:28px;">
+            Nona. 🤍
+        </p>
+
+
+        <p>
+            Mahal na mahal ka namin.
+        </p>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+id="music"
+loop>
+
+    <source
+    src="topoftheworld.m4a"
+    type="audio/mp4">
+
+</audio>
+
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+class="music-button"
+id="musicButton"
+onclick="toggleMusic()">
+
+    🎵
+
+</button>
+
+
+
+<script>
+
+
+/* =========================
+   OPEN CARD
+========================= */
+
+function openBirthday() {
+
+
+    document
+    .getElementById("opening")
+    .style
+    .display = "none";
+
+
+    document
+    .getElementById("main")
+    .style
+    .display = "block";
+
+
+    document
+    .getElementById("musicButton")
+    .style
+    .display = "block";
+
+
+    let music =
+        document
+        .getElementById("music");
+
+
+    music.play()
+    .catch(function() {
+
+        console.log(
+            "Press the music button to play."
+        );
+
+    });
+
+}
+
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic() {
+
+
+    let music =
+        document
+        .getElementById("music");
+
+
+    if (music.paused) {
+
+        music.play();
+
+    }
+
+    else {
+
+        music.pause();
+
+    }
+
+}
+
+
+
+/* =========================
+   CHANGE PHOTO
+========================= */
+
+function changePhoto(photo) {
+
+
+    let mainPhoto =
+        document
+        .getElementById("mainPhoto");
+
+
+    mainPhoto.style.opacity = "0";
+
+
+    setTimeout(function() {
+
+
+        mainPhoto.src =
+            photo.src;
+
+
+        mainPhoto.style.opacity =
+            "1";
+
+
+    }, 400);
+
+}
+
+
+
+/* =========================
+   13 PHOTO SLIDESHOW
+========================= */
+
+let photos = [
+
+    "firstpic.jpg",
+
+    "secondpic.jpg",
+
+    "thirdpic.jpg",
+
+    "fourthpic.jpg",
+
+    "fifthpic.jpg",
+
+    "sixthpic.jpg",
+
+    "seventhpic.jpg",
+
+    "eighthpic.jpg",
+
+    "ninthpic.jpg",
+
+    "tenthpic.jpg",
+
+    "eleventhpic.jpg",
+
+    "twelfthpic.jpg",
+
+    "thirteenthpic.jpg"
+
+];
+
+
+let photoIndex = 0;
+
+
+setInterval(function() {
+
+
+    let main =
+        document
+        .getElementById("main");
+
+
+    if (
+        main.style.display === "block"
+    ) {
+
+
+        photoIndex++;
+
+
+        if (
+            photoIndex >= photos.length
+        ) {
+
+            photoIndex = 0;
+
+        }
+
+
+        let mainPhoto =
+            document
+            .getElementById("mainPhoto");
+
+
+        mainPhoto.style.opacity =
+            "0";
+
+
+        setTimeout(function() {
+
+
+            mainPhoto.src =
+                photos[photoIndex];
+
+
+            mainPhoto.style.opacity =
+                "1";
+
+
+        }, 400);
+
+    }
+
+
+}, 5000);
+
+
+</script>
+
+
+</body>
+
+</html>
+```
