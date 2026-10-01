@@ -2,35 +2,162 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LUCKY777 Birthday Bonus</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LUCKY777 — Promo Center</title>
+<meta name="theme-color" content="#070707">
+<meta property="og:title" content="LUCKY777 — Promo Center">
+<meta property="og:description" content="Mystery Bonus Game • Limited promo access">
+<meta property="og:type" content="website">
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#070707;color:#fff}.wrap{min-height:100vh;display:grid;place-items:center;padding:20px}.panel{width:min(760px,96vw);background:#111;border:1px solid #3d3d3d;box-shadow:0 0 40px #000;padding:28px}.brand{font-size:42px;font-weight:900;color:#ffd45c}.brand b{color:#ff4057}.status{font-family:monospace;color:#9cff8d}.error{font-size:48px;font-weight:900;margin:28px 0}.bar{height:12px;background:#222;border:1px solid #444}.bar div{height:100%;width:0;background:#ff4057;transition:.25s}button{width:100%;padding:15px;margin-top:18px;background:#30080d;color:#ff7b88;border:1px solid #ff4057;font-weight:800}#birthday{display:none;min-height:100vh;background:#f1e5d8;color:#2b211b;padding:60px 20px;text-align:center}.hero{max-width:820px;margin:auto}.hero h1{font-family:Georgia,serif;color:#654833;font-size:clamp(46px,9vw,88px);line-height:.95}.note{max-width:720px;margin:28px auto;background:#fffaf2;padding:28px;border:1px solid #ddcbb8;line-height:1.8}.scratch{max-width:520px;margin:30px auto;background:#ddd1c5;padding:36px;border-radius:16px}.small{font-size:12px;color:#666}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff}
+body{overflow-x:hidden}
+.wrap{min-height:100vh;display:grid;place-items:center;padding:18px;background:
+radial-gradient(circle at 50% 10%,rgba(255,40,70,.12),transparent 35%),
+radial-gradient(circle at 10% 90%,rgba(255,198,66,.08),transparent 28%),
+#050505}
+.shell{width:min(820px,96vw);border:1px solid #2d2d2d;background:#0d0d0d;box-shadow:0 24px 70px #000;overflow:hidden}
+.top{height:42px;background:#151515;border-bottom:1px solid #262626;display:flex;align-items:center;justify-content:space-between;padding:0 14px;color:#8c8c8c;font-size:12px}
+.dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:#454545}.dots i:nth-child(1){background:#ff5c5c}.dots i:nth-child(2){background:#f7c94b}.dots i:nth-child(3){background:#42d86b}
+.brand{text-align:center;padding:26px 16px 8px;font-size:clamp(34px,7vw,56px);font-weight:900;letter-spacing:-2px;font-style:italic}
+.brand .a{color:#ffd764;text-shadow:0 0 18px rgba(255,215,100,.18)}.brand .b{color:#ff3c5d;text-shadow:0 0 18px rgba(255,60,93,.2)}
+.tag{text-align:center;color:#777;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.promo{margin:24px auto 4px;width:min(640px,90%);background:linear-gradient(135deg,#141414,#0c0c0c);border:1px solid #262626;border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.promo:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(255,53,87,.08);right:-40px;top:-60px}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#271015;color:#ff758a;border:1px solid #4f1b25;font-size:11px;font-weight:700;letter-spacing:.5px}
+.promo h1{font-size:clamp(28px,6vw,52px);margin:14px 0 8px;line-height:.95}
+.promo p{color:#a5a5a5;margin:0;line-height:1.6}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.box{background:#0b0b0b;border:1px solid #202020;padding:12px;border-radius:12px}
+.box small{display:block;color:#6f6f6f;font-size:10px;text-transform:uppercase;letter-spacing:.8px}.box b{display:block;margin-top:4px;font-size:13px;color:#ddd}
+.loader{height:8px;background:#1e1e1e;border-radius:999px;overflow:hidden;margin:20px 0 6px}.loader span{display:block;height:100%;width:8%;background:linear-gradient(90deg,#ff3c5d,#ffd764);transition:width .35s ease}
+.state{font-family:Consolas,monospace;color:#87e47e;font-size:12px;min-height:18px}
+.action{width:100%;padding:14px;border-radius:10px;border:1px solid #5a1d29;background:linear-gradient(#3a1018,#24090e);color:#ff8395;font-weight:800;letter-spacing:.4px;cursor:pointer;margin-top:12px}
+.action:active{transform:scale(.995)}
+.foot{text-align:center;color:#4e4e4e;font-size:10px;padding:16px 10px 22px;letter-spacing:.3px}
+.modal{position:fixed;display:none;width:min(330px,86vw);background:#f0f0f0;color:#111;border:1px solid #8a8a8a;box-shadow:8px 8px 0 rgba(0,0,0,.35);z-index:30}
+.mtitle{background:#b21f2d;color:white;padding:8px 10px;font-weight:700}.mbody{padding:15px;font-size:13px;line-height:1.45}.modal button{float:right;margin:0 12px 12px;padding:5px 15px}
+
+#birthday{display:none;min-height:100vh;background:
+radial-gradient(circle at 20% 0,#fff8ef 0 18%,transparent 40%),
+radial-gradient(circle at 90% 15%,#e7d5c2 0 8%,transparent 28%),
+#f1e5d8;color:#2b211b;padding:70px 20px;text-align:center}
+.hero{max-width:850px;margin:auto}.hero .tiny{font-size:12px;text-transform:uppercase;letter-spacing:2.5px;color:#947863;font-weight:700}
+.hero h1{font-family:Georgia,serif;color:#654833;font-size:clamp(52px,10vw,96px);line-height:.9;font-weight:400;margin:18px 0}
+.note{max-width:700px;margin:26px auto;background:#fffaf2;padding:28px;border:1px solid #ddcbb8;line-height:1.85;border-radius:20px;box-shadow:0 10px 35px rgba(65,42,25,.08)}
+.scratch{max-width:520px;margin:30px auto;background:#d8ccbf;padding:36px;border-radius:18px;border:1px solid #bfae9c}
 </style>
 </head>
 <body>
-<section id="game" class="wrap"><div class="panel">
-<div class="brand">LUCKY<b>777</b></div>
-<p class="status">fictional birthday game · prank mode</p>
-<div class="error" id="headline">GAME ERROR</div>
-<p id="status">Bonus sequence interrupted. Tap retry.</p>
-<div class="bar"><div id="progress"></div></div>
-<p id="count">Attempt 0 / 5</p>
-<button id="retry">RETRY BONUS GAME</button>
-<p class="small">Birthday prank only. No real gambling, payment, login, or account activity.</p>
-</div></section>
+<section id="game" class="wrap">
+  <div class="shell">
+    <div class="top">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <span>PROMO_CENTER</span>
+      <span id="clock">03:21</span>
+    </div>
+
+    <div class="brand"><span class="a">LUCKY</span><span class="b">777</span></div>
+    <div class="tag">mystery bonus center</div>
+
+    <div class="promo">
+      <span class="badge">LIMITED PROMO ACCESS</span>
+      <h1 id="headline">Mystery Bonus Game</h1>
+      <p id="desc">Your promo session is ready. Continue to check today's mystery reward.</p>
+
+      <div class="info">
+        <div class="box"><small>Promo ID</small><b>21X-777</b></div>
+        <div class="box"><small>Status</small><b id="promoStatus">READY</b></div>
+        <div class="box"><small>Access</small><b>GUEST</b></div>
+      </div>
+
+      <div class="loader"><span id="progress"></span></div>
+      <div class="state" id="state">Initializing promo session...</div>
+
+      <button class="action" id="retry">CHECK MYSTERY REWARD</button>
+    </div>
+
+    <div class="foot">LUCKY777 Entertainment Promo Center · Session 21X</div>
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="mtitle">Promo Service</div>
+  <div class="mbody" id="modalText">Temporary request error.</div>
+  <button id="modalOk">OK</button>
+</div>
 
 <section id="birthday">
-<div class="hero">
-<p>Surprise — it was a birthday prank.</p>
-<h1>Happy 21st Birthday, Russel!</h1>
-<div class="note">Wishing you a memorable birthday, a good year ahead, and many more happy moments to look back on.</div>
-<div class="scratch">SCRATCH-CARD STYLE SURPRISE<br><br><b>21 unlocked!</b><br>Here’s to more good memories ahead.</div>
-</div>
+  <div class="hero">
+    <div class="tiny">okay... surprise ♡</div>
+    <h1>Happy 21st Birthday, Russel!</h1>
+    <div class="note">
+      Good Morning Baby kooo. Sorry sa prank hehe. I wanted the first few seconds to confuse you a little before the real surprise showed up. Happy 21st Birthday, mahal. ♡
+    </div>
+    <div class="scratch">
+      <b>21 UNLOCKED</b><br><br>
+      Here’s to more memories, more laughs, and more moments worth keeping.
+    </div>
+  </div>
 </section>
+
 <script>
-let n=0;const retry=document.getElementById('retry'),count=document.getElementById('count'),status=document.getElementById('status'),progress=document.getElementById('progress'),headline=document.getElementById('headline');
-const heads=['GAME ERROR','TRY AGAIN','BONUS FAILED','FINAL CHECK','SURPRISE'];
-retry.onclick=()=>{n++;count.textContent='Attempt '+n+' / 5';progress.style.width=(n*20)+'%';headline.textContent=heads[n-1];status.textContent=n<5?'Game error. Try again.':'Birthday surprise unlocked!';if(n>=5)setTimeout(()=>{document.getElementById('game').style.display='none';document.getElementById('birthday').style.display='block';scrollTo(0,0)},500)};
+const retry=document.getElementById('retry');
+const state=document.getElementById('state');
+const progress=document.getElementById('progress');
+const headline=document.getElementById('headline');
+const desc=document.getElementById('desc');
+const promoStatus=document.getElementById('promoStatus');
+const modal=document.getElementById('modal');
+const modalText=document.getElementById('modalText');
+const modalOk=document.getElementById('modalOk');
+let n=0;
+
+const steps=[
+  {h:'Checking Promo Access',d:'Please keep this page open while we validate the promo session.',s:'Connecting to promo server...',btn:'CONTINUE',m:'Request timed out. Please try again.'},
+  {h:'Promo Session Found',d:'A valid guest session was detected. One more check is required.',s:'Verifying session token...',btn:'VERIFY SESSION',m:'Verification response delayed. Retry the request.'},
+  {h:'Almost There',d:'Promo data was loaded, but the reward panel did not respond.',s:'Reloading reward panel...',btn:'RELOAD PROMO',m:'Reward panel failed to load completely.'},
+  {h:'Final Promo Check',d:'The system is completing one final check before opening the reward.',s:'Finalizing promo data...',btn:'FINALIZE CHECK',m:'Unexpected response. One last retry is required.'},
+  {h:'Reward Ready',d:'Promo sequence completed successfully.',s:'Opening reward...',btn:'OPEN REWARD',m:''}
+];
+
+retry.addEventListener('click',()=>{
+  if(n>=5)return;
+  const step=steps[n];
+  n++;
+  headline.textContent=step.h;
+  desc.textContent=step.d;
+  state.textContent=step.s;
+  promoStatus.textContent=n<5?'PROCESSING':'READY';
+  progress.style.width=(n*20)+'%';
+  retry.textContent=step.btn;
+
+  if(n<5){
+    setTimeout(()=>{
+      modalText.textContent=step.m;
+      const maxX=Math.max(10,innerWidth-350);
+      const maxY=Math.max(70,innerHeight-190);
+      modal.style.left=Math.floor(Math.random()*maxX)+'px';
+      modal.style.top=Math.floor(Math.random()*maxY)+'px';
+      modal.style.display='block';
+      state.textContent='Service response incomplete.';
+      promoStatus.textContent='RETRY';
+    },450);
+  }else{
+    retry.disabled=true;
+    setTimeout(()=>{
+      document.getElementById('game').style.display='none';
+      document.getElementById('birthday').style.display='block';
+      scrollTo(0,0);
+    },1000);
+  }
+});
+modalOk.onclick=()=>modal.style.display='none';
+
+setInterval(()=>{
+  const d=new Date();
+  document.getElementById('clock').textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+},1000);
 </script>
-</body></html>
+</body>
+</html>
