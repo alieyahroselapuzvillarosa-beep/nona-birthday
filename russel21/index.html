@@ -22,8 +22,8 @@
 .promo h1{font-size:clamp(28px,6vw,52px);margin:14px 0 8px;line-height:.95}.promo p{color:#a5a5a5;margin:0;line-height:1.6}
 .info{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.box{background:#0b0b0b;border:1px solid #202020;padding:12px;border-radius:12px}.box small{display:block;color:#6f6f6f;font-size:10px;text-transform:uppercase}.box b{display:block;margin-top:4px;font-size:13px;color:#ddd}
 .loader{height:8px;background:#1e1e1e;border-radius:999px;overflow:hidden;margin:20px 0 6px}.loader span{display:block;height:100%;width:8%;background:linear-gradient(90deg,#ff3c5d,#ffd764);transition:width .35s ease}
-.state{font-family:Consolas,monospace;color:#87e47e;font-size:12px;min-height:18px}.action{width:100%;padding:14px;border-radius:10px;border:1px solid #5a1d29;background:linear-gradient(#3a1018,#24090e);color:#ff8395;font-weight:800;cursor:pointer;margin-top:12px}
-.foot{text-align:center;color:#4e4e4e;font-size:10px;padding:16px 10px 22px}.modal{position:fixed;display:none;width:min(330px,86vw);background:#f0f0f0;color:#111;border:1px solid #8a8a8a;box-shadow:8px 8px 0 rgba(0,0,0,.35);z-index:30}
+.state{font-family:Consolas,monospace;color:#87e47e;font-size:12px;min-height:18px}.action{width:100%;padding:16px;border-radius:10px;border:1px solid #5a1d29;background:linear-gradient(#3a1018,#24090e);color:#ff8395;font-weight:800;cursor:pointer;margin-top:12px;position:relative;z-index:50;pointer-events:auto;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
+.foot{text-align:center;color:#4e4e4e;font-size:10px;padding:16px 10px 22px}.modal{position:fixed;display:none;pointer-events:auto;width:min(330px,86vw);background:#f0f0f0;color:#111;border:1px solid #8a8a8a;box-shadow:8px 8px 0 rgba(0,0,0,.35);z-index:30}
 .mtitle{background:#b21f2d;color:white;padding:8px 10px;font-weight:700}.mbody{padding:15px;font-size:13px;line-height:1.45}.modal button{float:right;margin:0 12px 12px;padding:5px 15px}
 
 #birthday{display:none;background:#efe3d6;color:#2b211b;min-height:100vh}
@@ -55,13 +55,13 @@
 </div>
 <div class="loader"><span id="progress"></span></div>
 <div class="state" id="state">Initializing promo session...</div>
-<button class="action" id="retry">CHECK MYSTERY REWARD</button>
+<button type="button" class="action" id="retry">CHECK MYSTERY REWARD</button>
 </div>
 <div class="foot">LUCKY777 Entertainment Promo Center · Session 21X</div>
 </div>
 </section>
 
-<div class="modal" id="modal"><div class="mtitle">Promo Service</div><div class="mbody" id="modalText">Temporary request error.</div><button id="modalOk">OK</button></div>
+<div class="modal" id="modal"><div class="mtitle">Promo Service</div><div class="mbody" id="modalText">Temporary request error.</div><button type="button" id="modalOk">OK</button></div>
 
 <main id="birthday">
 <section class="hero"><div class="hero-inner">
@@ -152,7 +152,39 @@ const steps=[
 {h:'Final Promo Check',d:'The system is completing one final check before opening the reward.',s:'Finalizing promo data...',btn:'FINALIZE CHECK',m:'Unexpected response. One last retry is required.'},
 {h:'Reward Ready',d:'Promo sequence completed successfully.',s:'Opening reward...',btn:'OPEN REWARD',m:''}
 ];
-retry.onclick=()=>{if(n>=5)return;const step=steps[n];n++;headline.textContent=step.h;desc.textContent=step.d;state.textContent=step.s;promoStatus.textContent=n<5?'PROCESSING':'READY';progress.style.width=(n*20)+'%';retry.textContent=step.btn;if(n<5){setTimeout(()=>{modalText.textContent=step.m;modal.style.left=Math.max(10,Math.floor(Math.random()*(innerWidth-340)))+'px';modal.style.top=Math.max(60,Math.floor(Math.random()*(innerHeight-180)))+'px';modal.style.display='block';state.textContent='Service response incomplete.';promoStatus.textContent='RETRY'},420)}else{retry.disabled=true;setTimeout(()=>{document.getElementById('game').style.display='none';document.getElementById('birthday').style.display='block';scrollTo(0,0);setupScratch()},850)}};
+function handlePromoClick(e){
+  if(e){e.preventDefault();e.stopPropagation();}
+  if(n>=5)return;
+  modal.style.display='none';
+  const step=steps[n];
+  n++;
+  headline.textContent=step.h;
+  desc.textContent=step.d;
+  state.textContent=step.s;
+  promoStatus.textContent=n<5?'PROCESSING':'READY';
+  progress.style.width=(n*20)+'%';
+  retry.textContent=step.btn;
+  if(n<5){
+    setTimeout(()=>{
+      modalText.textContent=step.m;
+      modal.style.left='50%';
+      modal.style.top='50%';
+      modal.style.transform='translate(-50%,-50%)';
+      modal.style.display='block';
+      state.textContent='Service response incomplete.';
+      promoStatus.textContent='RETRY';
+    },420);
+  }else{
+    retry.disabled=true;
+    setTimeout(()=>{
+      document.getElementById('game').style.display='none';
+      document.getElementById('birthday').style.display='block';
+      window.scrollTo(0,0);
+      setupScratch();
+    },850);
+  }
+}
+retry.addEventListener('click',handlePromoClick,{passive:false});
 modalOk.onclick=()=>modal.style.display='none';
 setInterval(()=>{const d=new Date();document.getElementById('clock').textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')},1000);
 
