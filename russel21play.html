@@ -145,11 +145,11 @@
 <script>
 var n=0;
 var steps=[
-  ['Checking Promo Access','Please keep this page open while we validate the promo session.','Connecting to promo server...','CONTINUE'],
-  ['Promo Session Found','A valid guest session was detected. One more check is required.','Verifying session...','VERIFY SESSION'],
-  ['Almost There','Promo data was loaded, but the reward panel did not respond.','Reloading reward panel...','RELOAD PROMO'],
-  ['Final Promo Check','The system is completing one final check before opening the reward.','Finalizing promo data...','FINALIZE CHECK'],
-  ['Reward Ready','Promo sequence completed successfully.','Opening reward...','OPEN REWARD']
+  ['Checking Promo Access','Please keep this page open while we verify the promo session.','Connecting to game server...','CONTINUE','Connection timeout. Server did not respond in time.'],
+  ['Promo Session Found','Guest access detected. Verification is required before opening the reward.','Checking game session...','VERIFY SESSION','Session verification failed. Please retry.'],
+  ['Reward Panel Loading','Promo data loaded, but the reward panel is still unavailable.','Loading reward panel...','RELOAD REWARD','Reward panel temporarily unavailable. Try again.'],
+  ['Final Sync','One final sync is needed before the reward can open.','Syncing promo data...','SYNC AGAIN','Final sync error. Please retry once more.'],
+  ['Reward Ready','Promo sequence completed successfully.','Opening mystery reward...','OPEN REWARD','']
 ];
 
 function promoTap(){
@@ -166,21 +166,23 @@ function promoTap(){
   headline.innerText=s[0];
   desc.innerText=s[1];
   state.innerText=s[2];
-  promoStatus.innerText=(n<5?'RETRY':'READY');
+  promoStatus.innerText=(n<5?'PROCESSING':'READY');
   progress.style.width=(n*20)+'%';
   retry.innerText=s[3];
 
   if(n<5){
     setTimeout(function(){
-      alert('Promo service temporarily delayed. Tap OK, then continue.');
-    },150);
+      alert(s[4]);
+      promoStatus.innerText='RETRY';
+      state.innerText='Action required: tap the button again.';
+    },180);
   }else{
     retry.disabled=true;
     setTimeout(function(){
       document.getElementById('game').style.display='none';
       document.getElementById('birthday').style.display='block';
       window.scrollTo(0,0);
-    },500);
+    },550);
   }
   return false;
 }
