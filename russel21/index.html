@@ -192,7 +192,7 @@ function setupScratch(){
 const c=document.getElementById('scratchCanvas'),ctx=c.getContext('2d'),r=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1;c.width=r.width*dpr;c.height=r.height*dpr;ctx.scale(dpr,dpr);ctx.fillStyle='#8d7b6c';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#f4e9dc';ctx.font='700 22px Arial';ctx.textAlign='center';ctx.fillText('SCRATCH HERE ♡',r.width/2,r.height/2);ctx.globalCompositeOperation='destination-out';let down=false;
 function scratch(e){if(!down&&e.type!=='touchmove')return;const p=e.touches?e.touches[0]:e,x=p.clientX-r.left,y=p.clientY-r.top;ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill()}
 c.onpointerdown=e=>{down=true;scratch(e)};c.onpointermove=scratch;window.onpointerup=()=>down=false;c.ontouchstart=e=>{down=true;scratch(e)};c.ontouchmove=e=>{e.preventDefault();scratch(e)};c.ontouchend=()=>down=false;
-}}
+}
 </script>
 </body>
 </html>
