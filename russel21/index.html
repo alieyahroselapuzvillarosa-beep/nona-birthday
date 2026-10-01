@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUCKY777 Birthday Bonus</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#070707;color:#fff}.wrap{min-height:100vh;display:grid;place-items:center;padding:20px}.panel{width:min(760px,96vw);background:#111;border:1px solid #3d3d3d;box-shadow:0 0 40px #000;padding:28px}.brand{font-size:42px;font-weight:900;color:#ffd45c}.brand b{color:#ff4057}.status{font-family:monospace;color:#9cff8d}.error{font-size:48px;font-weight:900;margin:28px 0}.bar{height:12px;background:#222;border:1px solid #444}.bar div{height:100%;width:0;background:#ff4057;transition:.25s}button{width:100%;padding:15px;margin-top:18px;background:#30080d;color:#ff7b88;border:1px solid #ff4057;font-weight:800}#birthday{display:none;min-height:100vh;background:#f1e5d8;color:#2b211b;padding:60px 20px;text-align:center}.hero{max-width:820px;margin:auto}.hero h1{font-family:Georgia,serif;color:#654833;font-size:clamp(46px,9vw,88px);line-height:.95}.note{max-width:720px;margin:28px auto;background:#fffaf2;padding:28px;border:1px solid #ddcbb8;line-height:1.8}.scratch{max-width:520px;margin:30px auto;background:#ddd1c5;padding:36px;border-radius:16px}.small{font-size:12px;color:#666}
+</style>
+</head>
+<body>
+<section id="game" class="wrap"><div class="panel">
+<div class="brand">LUCKY<b>777</b></div>
+<p class="status">fictional birthday game · prank mode</p>
+<div class="error" id="headline">GAME ERROR</div>
+<p id="status">Bonus sequence interrupted. Tap retry.</p>
+<div class="bar"><div id="progress"></div></div>
+<p id="count">Attempt 0 / 5</p>
+<button id="retry">RETRY BONUS GAME</button>
+<p class="small">Birthday prank only. No real gambling, payment, login, or account activity.</p>
+</div></section>
+
+<section id="birthday">
+<div class="hero">
+<p>Surprise — it was a birthday prank.</p>
+<h1>Happy 21st Birthday, Russel!</h1>
+<div class="note">Wishing you a memorable birthday, a good year ahead, and many more happy moments to look back on.</div>
+<div class="scratch">SCRATCH-CARD STYLE SURPRISE<br><br><b>21 unlocked!</b><br>Here’s to more good memories ahead.</div>
+</div>
+</section>
+<script>
+let n=0;const retry=document.getElementById('retry'),count=document.getElementById('count'),status=document.getElementById('status'),progress=document.getElementById('progress'),headline=document.getElementById('headline');
+const heads=['GAME ERROR','TRY AGAIN','BONUS FAILED','FINAL CHECK','SURPRISE'];
+retry.onclick=()=>{n++;count.textContent='Attempt '+n+' / 5';progress.style.width=(n*20)+'%';headline.textContent=heads[n-1];status.textContent=n<5?'Game error. Try again.':'Birthday surprise unlocked!';if(n>=5)setTimeout(()=>{document.getElementById('game').style.display='none';document.getElementById('birthday').style.display='block';scrollTo(0,0)},500)};
+</script>
+</body></html>
